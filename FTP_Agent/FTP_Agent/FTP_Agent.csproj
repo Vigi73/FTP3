@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>agent_102942.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="1486485553-ago-arrow-arrow-left-back-previous-direction-left_81160.png" />
+    <None Remove="agent_102942.png" />
+    <None Remove="backleftarrowsymbol_87848.png" />
+    <None Remove="exit.png" />
+    <None Remove="file_xls_15448.png" />
+    <None Remove="folder-add_icon-icons.com_52433.png" />
+    <None Remove="restart_back_left_arrow_6022.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BytesRoad.Net.Ftp">
+      <HintPath>..\BytesRoad.Net.Ftp.dll</HintPath>
+    </Reference>
+    <Reference Include="BytesRoad.Net.Sockets">
+      <HintPath>..\BytesRoad.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="INIManager">
+      <HintPath>..\INIManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InputBox">
+      <HintPath>..\..\..\ftp_agent2\InputBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <HintPath>..\..\..\ftp_agent2\Microsoft.VisualBasic.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1486485553-ago-arrow-arrow-left-back-previous-direction-left_81160.png" />
+    <Resource Include="agent_102942.png" />
+    <Resource Include="backleftarrowsymbol_87848.png" />
+    <Resource Include="exit.png" />
+    <Resource Include="file_xls_15448.png" />
+    <Resource Include="folder-add_icon-icons.com_52433.png" />
+    <Resource Include="restart_back_left_arrow_6022.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
