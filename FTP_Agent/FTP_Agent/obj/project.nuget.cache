@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "qnZ+cbgrltR8pKdYvEDP1+t6sm6rzp/iRk9g9g9SXxjB6/fSCK8ck9ILQ0kdwXVe8YahENdEyJaX0MXvXbN7/w==",
+  "dgSpecHash": "NKjHgzJ6XsyRQ5+XGJTI6zCfoAkI9uz2E/QkIzzZgmiXRYqMdZX0Hu4/TG9mmRpg3OaU6+j2VrkXYwTDJIORqA==",
   "success": true,
   "projectFilePath": "E:\\FTP_A_NEW\\FTP_Agent\\FTP_Agent\\FTP_Agent.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\ookii.dialogs\\1.0.0\\ookii.dialogs.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"Ookii.Dialogs 1.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "Ookii.Dialogs",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

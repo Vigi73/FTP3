@@ -147,10 +147,17 @@
                     <CheckBox x:Name="chAll" Content="Показать все" Grid.Column="3" HorizontalAlignment="Left" Height="21" Margin="488,232,0,0" VerticalAlignment="Top" Width="107" HorizontalContentAlignment="Left"/>
                     <TextBox x:Name="txtNumber" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,255,0,0" Text="Отдел № 19" TextWrapping="Wrap" VerticalAlignment="Top" Width="534" HorizontalContentAlignment="Right"/>
                     <Label Content="Номер отдела:" Grid.Column="2" HorizontalAlignment="Left" Height="26" Margin="43,254,0,0" VerticalAlignment="Top" Width="95" Grid.ColumnSpan="2"/>
-                    <DatePicker x:Name="dataTime1" Grid.Column="3" HorizontalAlignment="Left" Margin="385,328,0,0" VerticalAlignment="Top" Width="192" Height="25"/>
+                    <DatePicker x:Name="dataTime1" Grid.Column="3" HorizontalAlignment="Left" Margin="40,322,0,0" VerticalAlignment="Top" Width="537" Height="25"/>
                     <TextBox x:Name="txtSave" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,288,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="483" HorizontalContentAlignment="Left"/>
-                    <Button x:Name="btnSelectFolder" Content="..." Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="531,288,0,0" VerticalAlignment="Top" Width="46" Background="{x:Null}"/>
-                    <Button Content="" Grid.Column="3" HorizontalAlignment="Left" Margin="176,352,0,0" VerticalAlignment="Top" Height="44" Width="67" Click="Button_Click_2">
+                    <Button x:Name="btnSelectFolder" Content="..." Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="531,288,0,0" VerticalAlignment="Top" Width="46" Click="btnSelectFolder_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Grid.Column="3" HorizontalAlignment="Left" Margin="513,357,0,0" VerticalAlignment="Top" Height="39" Width="64" Click="Button_Click_2" ToolTip="Сохранить изменения">
                         <Button.BorderBrush>
                             <ImageBrush ImageSource="/saveas_1173.png"/>
                         </Button.BorderBrush>
@@ -180,6 +187,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Column="5"/>
 
     </Grid>
 

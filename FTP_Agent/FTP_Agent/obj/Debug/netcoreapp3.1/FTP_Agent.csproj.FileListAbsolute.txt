@@ -11,7 +11,6 @@ E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent_MarkupCompile
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent_MarkupCompile.lref
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\MainWindow.baml
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.g.resources
-E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.csproj.CoreCompileInputs.cache
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.AssemblyInfoInputs.cache
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.AssemblyInfo.cs
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.dll
@@ -26,3 +25,5 @@ E:\FTP_A_NEW\FTP_Agent\FTP_Agent\bin\Debug\netcoreapp3.1\InputBox.dll
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\bin\Debug\netcoreapp3.1\Microsoft.VisualBasic.dll
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.csproj.CopyComplete
 E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.csproj.ResolveComReference.cache
+E:\FTP_A_NEW\FTP_Agent\FTP_Agent\bin\Debug\netcoreapp3.1\Ookii.Dialogs.Wpf.dll
+E:\FTP_A_NEW\FTP_Agent\FTP_Agent\obj\Debug\netcoreapp3.1\FTP_Agent.csproj.CoreCompileInputs.cache

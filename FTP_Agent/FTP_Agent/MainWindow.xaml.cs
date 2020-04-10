@@ -130,13 +130,7 @@ namespace FTP_Agent
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            saveAllData();
-            getDataFromIni();
-            treeView1.Items.Clear();
-            treeView2.Items.Clear();
-            //connect();
-            //connect2();
-            stbDate.Content = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
+           
         }
 
         private void mainWindow_Closed(object sender, EventArgs e)
@@ -147,6 +141,24 @@ namespace FTP_Agent
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             saveAllData();
+            getDataFromIni();
+            treeView1.Items.Clear();
+            treeView2.Items.Clear();
+            //connect();
+            //connect2();
+            stbDate.Content = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
+        }
+
+
+        //PM> Install-Package Ookii.Dialogs
+        private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Ookii.Dialogs.Wpf.VistaFolderBrowserDialog();
+            if (dialog.ShowDialog(this).GetValueOrDefault())
+            {
+                txtSave.Text = dialog.SelectedPath;
+            }
+
         }
     }
 }
