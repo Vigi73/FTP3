@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FTP_Agent"
         mc:Ignorable="d"
-        Title="MainWindow" Height="539" Width="798" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" Opacity="0.95" AllowsTransparency="True" Loaded="mainWindow_Loaded">
+        Title="MainWindow" Height="539" Width="798" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" Opacity="0.95" AllowsTransparency="True" Loaded="mainWindow_Loaded" Closed="mainWindow_Closed">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black"/>
@@ -25,8 +25,8 @@
             <ColumnDefinition Width="26*"/>
             <ColumnDefinition Width="22*"/>
             <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="98*"/>
-            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="87*"/>
+            <ColumnDefinition Width="35*"/>
             <ColumnDefinition Width="93*"/>
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
@@ -84,15 +84,16 @@
                 <Grid Opacity="0.98" Height="439">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="19*"/>
-                        <ColumnDefinition Width="48*"/>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="15*"/>
                         <ColumnDefinition Width="7*"/>
-                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="13"/>
                         <ColumnDefinition Width="46*"/>
                         <ColumnDefinition Width="71*"/>
                         <ColumnDefinition Width="169*"/>
                         <ColumnDefinition Width="395*"/>
                     </Grid.ColumnDefinitions>
-                    <TreeView x:Name="treeView1" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="351" VerticalAlignment="Top" Width="388" Margin="-10,36,0,0">
+                    <TreeView x:Name="treeView1" Grid.ColumnSpan="9" HorizontalAlignment="Left" Height="351" VerticalAlignment="Top" Width="388" Margin="-10,36,0,0">
                         <TreeView.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="1"/>
@@ -100,7 +101,7 @@
                             </LinearGradientBrush>
                         </TreeView.Background>
                     </TreeView>
-                    <TreeView x:Name="treeView2" HorizontalAlignment="Left" Height="351" Margin="8,36,0,0" VerticalAlignment="Top" Width="388" Grid.Column="7" FontWeight="Normal">
+                    <TreeView x:Name="treeView2" HorizontalAlignment="Left" Height="351" Margin="8,36,0,0" VerticalAlignment="Top" Width="388" Grid.Column="8" FontWeight="Normal">
                         <TreeView.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="1"/>
@@ -109,11 +110,11 @@
                         </TreeView.Background>
                     </TreeView>
                     <Image x:Name="btnAdd1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="32" Margin="2,2,0,0" VerticalAlignment="Top" Width="32" Source="/folder-add_icon-icons.com_52433.png" Stretch="None" Cursor="Hand" ToolTip="Создать папку"/>
-                    <Image x:Name="btnAddFile1" Grid.ColumnSpan="3" Grid.Column="1" Height="32" Margin="27,2,9,0" VerticalAlignment="Top" Source="/file_xls_15448.png" ToolTip="Загрузка файла" Cursor="Hand"/>
-                    <Image Grid.Column="4" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="32" Source="/backleftarrowsymbol_87848.png" Cursor="Hand" Margin="0,2,0,0" ToolTip="Каталог выше"/>
-                    <Image x:Name="btnAdd2" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="10,1,0,0" VerticalAlignment="Top" Width="32" Source="/folder-add_icon-icons.com_52433.png" Cursor="Hand" ToolTip="Создать каталог"/>
-                    <Image x:Name="btnAddFile2" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="57,1,0,0" VerticalAlignment="Top" Width="32" Source="/file_xls_15448.png" Cursor="Hand" ToolTip="Загрузка файла"/>
-                    <Image Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="103,1,0,0" VerticalAlignment="Top" Width="32" Source="/backleftarrowsymbol_87848.png" Cursor="Hand" ToolTip="Каталог выше"/>
+                    <Image x:Name="btnAddFile1" Grid.ColumnSpan="4" Grid.Column="1" Height="32" Margin="27,2,9,0" VerticalAlignment="Top" Source="/file_xls_15448.png" ToolTip="Загрузка файла" Cursor="Hand"/>
+                    <Image Grid.Column="5" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="32" Source="/backleftarrowsymbol_87848.png" Cursor="Hand" Margin="0,2,0,0" ToolTip="Каталог выше"/>
+                    <Image x:Name="btnAdd2" Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="10,1,0,0" VerticalAlignment="Top" Width="32" Source="/folder-add_icon-icons.com_52433.png" Cursor="Hand" ToolTip="Создать каталог"/>
+                    <Image x:Name="btnAddFile2" Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="57,1,0,0" VerticalAlignment="Top" Width="32" Source="/file_xls_15448.png" Cursor="Hand" ToolTip="Загрузка файла"/>
+                    <Image Grid.Column="8" HorizontalAlignment="Left" Height="32" Margin="103,1,0,0" VerticalAlignment="Top" Width="32" Source="/backleftarrowsymbol_87848.png" Cursor="Hand" ToolTip="Каталог выше"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Настройки">
@@ -149,24 +150,33 @@
                     <DatePicker x:Name="dataTime1" Grid.Column="3" HorizontalAlignment="Left" Margin="385,328,0,0" VerticalAlignment="Top" Width="192" Height="25"/>
                     <TextBox x:Name="txtSave" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,288,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="483" HorizontalContentAlignment="Left"/>
                     <Button x:Name="btnSelectFolder" Content="..." Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="531,288,0,0" VerticalAlignment="Top" Width="46" Background="{x:Null}"/>
-                    <Button Content="Сохранить" Grid.Column="3" HorizontalAlignment="Left" Height="27" Margin="504,369,0,0" VerticalAlignment="Top" Width="73" Click="Button_Click_1"/>
+                    <Button Content="" Grid.Column="3" HorizontalAlignment="Left" Margin="176,352,0,0" VerticalAlignment="Top" Height="44" Width="67" Click="Button_Click_2">
+                        <Button.BorderBrush>
+                            <ImageBrush ImageSource="/saveas_1173.png"/>
+                        </Button.BorderBrush>
+                        <Button.Background>
+                            <ImageBrush ImageSource="/saveas_1173.png" Stretch="None"/>
+                        </Button.Background>
+                    </Button>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Image HorizontalAlignment="Left" Height="27" Margin="9,14,0,0" VerticalAlignment="Top" Width="37" Source="/agent_102942.png"/>
+        <Image HorizontalAlignment="Center" Height="27" Margin="0,14,0,0" VerticalAlignment="Top" Width="37" Source="/agent_102942.png"/>
         <Label x:Name="stbDate" Content="Дата слежения:" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="27" Margin="0,500,0,0" VerticalAlignment="Top" Width="241" Background="#00000000" FontSize="14">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="0.862"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.723"/>
+                    <GradientStop Color="White" Offset="0.064"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
         <Label x:Name="toolStripLabel2" Content="Текущая директория:" Grid.ColumnSpan="6" HorizontalAlignment="Left" Margin="20,500,0,0" Width="241" Background="#00000000" FontSize="14" Grid.Column="8" Height="27" VerticalAlignment="Top">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="0.862"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.695"/>
+                    <GradientStop Color="White" Offset="0"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>

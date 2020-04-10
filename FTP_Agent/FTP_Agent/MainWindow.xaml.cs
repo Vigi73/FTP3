@@ -43,6 +43,12 @@ namespace FTP_Agent
         string currentPath2;
 
 
+
+
+
+
+
+
         // Сохраняем данные в ini файл
         public void getDataFromIni()
         {
@@ -117,9 +123,28 @@ namespace FTP_Agent
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             getDataFromIni();
+            //connect();
+            //connect2();
+            stbDate.Content = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            saveAllData();
+            getDataFromIni();
+            treeView1.Items.Clear();
+            treeView2.Items.Clear();
+            //connect();
+            //connect2();
+            stbDate.Content = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
+        }
+
+        private void mainWindow_Closed(object sender, EventArgs e)
+        {
+            saveAllData();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             saveAllData();
         }
