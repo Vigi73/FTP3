@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FTP_Agent"
         mc:Ignorable="d"
-        Title="MainWindow" Height="539" Width="798" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" Opacity="0.95" AllowsTransparency="True">
+        Title="MainWindow" Height="539" Width="798" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" Opacity="0.95" AllowsTransparency="True" Loaded="mainWindow_Loaded">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black"/>
@@ -92,7 +92,7 @@
                         <ColumnDefinition Width="169*"/>
                         <ColumnDefinition Width="395*"/>
                     </Grid.ColumnDefinitions>
-                    <TreeView Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="351" VerticalAlignment="Top" Width="388" Margin="-10,36,0,0">
+                    <TreeView x:Name="treeView1" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="351" VerticalAlignment="Top" Width="388" Margin="-10,36,0,0">
                         <TreeView.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="1"/>
@@ -100,7 +100,7 @@
                             </LinearGradientBrush>
                         </TreeView.Background>
                     </TreeView>
-                    <TreeView HorizontalAlignment="Left" Height="351" Margin="8,36,0,0" VerticalAlignment="Top" Width="388" Grid.Column="7" FontWeight="Normal">
+                    <TreeView x:Name="treeView2" HorizontalAlignment="Left" Height="351" Margin="8,36,0,0" VerticalAlignment="Top" Width="388" Grid.Column="7" FontWeight="Normal">
                         <TreeView.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="1"/>
@@ -108,46 +108,53 @@
                             </LinearGradientBrush>
                         </TreeView.Background>
                     </TreeView>
-                    <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="32" Margin="2,2,0,0" VerticalAlignment="Top" Width="32" Source="/folder-add_icon-icons.com_52433.png" Stretch="None" Cursor="Hand" ToolTip="Создать папку"/>
-                    <Image Grid.ColumnSpan="3" Grid.Column="1" Height="32" Margin="27,2,9,0" VerticalAlignment="Top" Source="/file_xls_15448.png" ToolTip="Загрузка файла" Cursor="Hand"/>
+                    <Image x:Name="btnAdd1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="32" Margin="2,2,0,0" VerticalAlignment="Top" Width="32" Source="/folder-add_icon-icons.com_52433.png" Stretch="None" Cursor="Hand" ToolTip="Создать папку"/>
+                    <Image x:Name="btnAddFile1" Grid.ColumnSpan="3" Grid.Column="1" Height="32" Margin="27,2,9,0" VerticalAlignment="Top" Source="/file_xls_15448.png" ToolTip="Загрузка файла" Cursor="Hand"/>
                     <Image Grid.Column="4" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="32" Source="/backleftarrowsymbol_87848.png" Cursor="Hand" Margin="0,2,0,0" ToolTip="Каталог выше"/>
-                    <Image Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="10,1,0,0" VerticalAlignment="Top" Width="32" Source="/folder-add_icon-icons.com_52433.png" Cursor="Hand"/>
-                    <Image Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="57,1,0,0" VerticalAlignment="Top" Width="32" Source="/file_xls_15448.png" Cursor="Hand"/>
-                    <Image Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="103,1,0,0" VerticalAlignment="Top" Width="32" Source="/backleftarrowsymbol_87848.png"/>
+                    <Image x:Name="btnAdd2" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="10,1,0,0" VerticalAlignment="Top" Width="32" Source="/folder-add_icon-icons.com_52433.png" Cursor="Hand" ToolTip="Создать каталог"/>
+                    <Image x:Name="btnAddFile2" Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="57,1,0,0" VerticalAlignment="Top" Width="32" Source="/file_xls_15448.png" Cursor="Hand" ToolTip="Загрузка файла"/>
+                    <Image Grid.Column="7" HorizontalAlignment="Left" Height="32" Margin="103,1,0,0" VerticalAlignment="Top" Width="32" Source="/backleftarrowsymbol_87848.png" Cursor="Hand" ToolTip="Каталог выше"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Настройки">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="1"/>
+                            <GradientStop Color="White" Offset="0.196"/>
+                            <GradientStop Color="#FF65685D" Offset="0.668"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="17*"/>
                         <ColumnDefinition Width="59*"/>
                         <ColumnDefinition Width="95*"/>
                         <ColumnDefinition Width="597*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,26,0,0" Text="Информацинное взаимодействие/Контроль по ч. 5/ВходЯщие/" TextWrapping="Wrap" VerticalAlignment="Top" Width="534"/>
-                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,56,0,0" Text="Информацинное взаимодействие/Контроль по ч. 5/ИсходЯщие/" TextWrapping="Wrap" VerticalAlignment="Top" Width="534"/>
-                    <RadioButton Content="Базовый путь" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="33,26,0,0" VerticalAlignment="Top" Width="100" IsChecked="True" Grid.ColumnSpan="2"/>
-                    <RadioButton Content="Базовый путь" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="33,56,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
-                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,129,0,0" Text="10.17.0.58" TextWrapping="Wrap" VerticalAlignment="Top" Width="399" HorizontalContentAlignment="Right"/>
-                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="447,129,0,0" Text="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="txtPath" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,26,0,0" Text="Информацинное взаимодействие/Контроль по ч. 5/ВходЯщие/" TextWrapping="Wrap" VerticalAlignment="Top" Width="534"/>
+                    <TextBox x:Name="txtPath2" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,56,0,0" Text="Информацинное взаимодействие/Контроль по ч. 5/ИсходЯщие/" TextWrapping="Wrap" VerticalAlignment="Top" Width="534"/>
+                    <RadioButton x:Name="rbPath1" Content="Базовый путь" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="33,26,0,0" VerticalAlignment="Top" Width="100" IsChecked="True" Grid.ColumnSpan="2"/>
+                    <RadioButton x:Name="rbPath2" Content="Базовый путь" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="33,56,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtServer" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,129,0,0" Text="10.17.0.58" TextWrapping="Wrap" VerticalAlignment="Top" Width="399" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="txtPort" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="447,129,0,0" Text="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" HorizontalContentAlignment="Right"/>
                     <Label Content="FTP Адрес:" Grid.Column="3" HorizontalAlignment="Left" Height="26" Margin="40,106,0,0" VerticalAlignment="Top" Width="178"/>
                     <Label Content="Порт:" Grid.Column="3" HorizontalAlignment="Left" Height="26" Margin="441,107,0,0" VerticalAlignment="Top" Width="100"/>
-                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,175,0,0" Text="ofk21" TextWrapping="Wrap" VerticalAlignment="Top" Width="534" HorizontalContentAlignment="Right"/>
-                    <PasswordBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,203,0,0" VerticalAlignment="Top" Width="534" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="txtLogin" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,175,0,0" Text="ofk21" TextWrapping="Wrap" VerticalAlignment="Top" Width="534" HorizontalContentAlignment="Right"/>
+                    <PasswordBox x:Name="txtPassword" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,203,0,0" VerticalAlignment="Top" Width="534" HorizontalContentAlignment="Right"/>
                     <Label Content="Логин:" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="87,175,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
                     <Label Content="Пароль:" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="79,205,0,0" VerticalAlignment="Top" Width="76" Grid.ColumnSpan="2"/>
-                    <CheckBox Content="Показать все" Grid.Column="3" HorizontalAlignment="Left" Height="21" Margin="488,232,0,0" VerticalAlignment="Top" Width="107" HorizontalContentAlignment="Left"/>
-                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,255,0,0" Text="Отдел № 19" TextWrapping="Wrap" VerticalAlignment="Top" Width="534" HorizontalContentAlignment="Right"/>
+                    <CheckBox x:Name="chAll" Content="Показать все" Grid.Column="3" HorizontalAlignment="Left" Height="21" Margin="488,232,0,0" VerticalAlignment="Top" Width="107" HorizontalContentAlignment="Left"/>
+                    <TextBox x:Name="txtNumber" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,255,0,0" Text="Отдел № 19" TextWrapping="Wrap" VerticalAlignment="Top" Width="534" HorizontalContentAlignment="Right"/>
                     <Label Content="Номер отдела:" Grid.Column="2" HorizontalAlignment="Left" Height="26" Margin="43,254,0,0" VerticalAlignment="Top" Width="95" Grid.ColumnSpan="2"/>
-                    <DatePicker Grid.Column="3" HorizontalAlignment="Left" Margin="385,328,0,0" VerticalAlignment="Top" Width="192" Height="25"/>
-                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,288,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="483" HorizontalContentAlignment="Left"/>
-                    <Button Content="..." Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="531,288,0,0" VerticalAlignment="Top" Width="46" Background="{x:Null}"/>
+                    <DatePicker x:Name="dataTime1" Grid.Column="3" HorizontalAlignment="Left" Margin="385,328,0,0" VerticalAlignment="Top" Width="192" Height="25"/>
+                    <TextBox x:Name="txtSave" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,288,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="483" HorizontalContentAlignment="Left"/>
+                    <Button x:Name="btnSelectFolder" Content="..." Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="531,288,0,0" VerticalAlignment="Top" Width="46" Background="{x:Null}"/>
                     <Button Content="Сохранить" Grid.Column="3" HorizontalAlignment="Left" Height="27" Margin="504,369,0,0" VerticalAlignment="Top" Width="73"/>
                 </Grid>
             </TabItem>
         </TabControl>
         <Image HorizontalAlignment="Left" Height="27" Margin="9,14,0,0" VerticalAlignment="Top" Width="37" Source="/agent_102942.png"/>
-        <Label Content="Дата слежения:" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="27" Margin="0,500,0,0" VerticalAlignment="Top" Width="241" Background="#00000000" FontSize="14">
+        <Label x:Name="stbDate" Content="Дата слежения:" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="27" Margin="0,500,0,0" VerticalAlignment="Top" Width="241" Background="#00000000" FontSize="14">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -155,7 +162,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Текущая директория:" Grid.ColumnSpan="6" HorizontalAlignment="Left" Margin="20,500,0,0" Width="241" Background="#00000000" FontSize="14" Grid.Column="8" Height="27" VerticalAlignment="Top">
+        <Label x:Name="toolStripLabel2" Content="Текущая директория:" Grid.ColumnSpan="6" HorizontalAlignment="Left" Margin="20,500,0,0" Width="241" Background="#00000000" FontSize="14" Grid.Column="8" Height="27" VerticalAlignment="Top">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
