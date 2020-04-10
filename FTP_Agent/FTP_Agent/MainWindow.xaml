@@ -187,7 +187,6 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Border BorderThickness="1" BorderBrush="Black" Grid.Column="5"/>
 
     </Grid>
 
