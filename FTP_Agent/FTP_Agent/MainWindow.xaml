@@ -149,7 +149,7 @@
                     <DatePicker x:Name="dataTime1" Grid.Column="3" HorizontalAlignment="Left" Margin="385,328,0,0" VerticalAlignment="Top" Width="192" Height="25"/>
                     <TextBox x:Name="txtSave" Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="43,288,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="483" HorizontalContentAlignment="Left"/>
                     <Button x:Name="btnSelectFolder" Content="..." Grid.Column="3" HorizontalAlignment="Left" Height="25" Margin="531,288,0,0" VerticalAlignment="Top" Width="46" Background="{x:Null}"/>
-                    <Button Content="Сохранить" Grid.Column="3" HorizontalAlignment="Left" Height="27" Margin="504,369,0,0" VerticalAlignment="Top" Width="73"/>
+                    <Button Content="Сохранить" Grid.Column="3" HorizontalAlignment="Left" Height="27" Margin="504,369,0,0" VerticalAlignment="Top" Width="73" Click="Button_Click_1"/>
                 </Grid>
             </TabItem>
         </TabControl>

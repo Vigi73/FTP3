@@ -78,6 +78,24 @@ namespace FTP_Agent
 
         }
 
+        // Запись всех настроек 
+        public void saveAllData()
+        {
+            string basePath = System.IO.Path.Combine(appPath);
+            INIManager.Class1.INIManager manager = new Class1.INIManager(basePath + @"/my.ini");
+            manager.WritePrivateString("main", "basePath", txtPath.Text.Trim());
+            manager.WritePrivateString("main", "basePath2", txtPath2.Text.Trim());
+            manager.WritePrivateString("main", "server", txtServer.Text.Trim());
+            manager.WritePrivateString("main", "port", txtPort.Text.Trim());
+            manager.WritePrivateString("main", "login", txtLogin.Text.Trim());
+            manager.WritePrivateString("main", "passw", txtPassword.Password.Trim());
+            manager.WritePrivateString("main", "viewAll", chAll.IsChecked.ToString());
+            manager.WritePrivateString("main", "number", txtNumber.Text.Trim());
+            //manager.WritePrivateString("main", "topmost", chTopMost.Checked.ToString());
+            manager.WritePrivateString("main", "save", txtSave.Text.Trim());
+            manager.WritePrivateString("main", "data", dataTime1.Text.ToString());
+
+        }
 
 
 
@@ -99,6 +117,11 @@ namespace FTP_Agent
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             getDataFromIni();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            saveAllData();
         }
     }
 }
