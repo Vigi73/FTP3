@@ -142,8 +142,8 @@ namespace FTP_Agent
         {
             saveAllData();
             getDataFromIni();
-            treeView1.Items.Clear();
-            treeView2.Items.Clear();
+            //treeView1.Items.Clear();
+            //treeView2.Items.Clear();
             //connect();
             //connect2();
             stbDate.Content = String.Format("Дата слежения: {0}", timeWork.Split(' ')[0]);
